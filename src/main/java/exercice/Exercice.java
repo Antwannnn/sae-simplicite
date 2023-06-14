@@ -2,7 +2,7 @@ package exercice;
 
 import java.util.*;
 
-public class Exercice {
+public class exercice {
 
     public static List<String> solution(String t, List<Character> o) {
         List<String> m = new ArrayList<>();
