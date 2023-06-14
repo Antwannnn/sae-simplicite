@@ -3,26 +3,19 @@ package exercice;
 import java.util.*;
 
 public class Exercice {
-    public static List<String> solution(String texte, List<Character> ordre) {
-        List<String> mots = new ArrayList<>(Arrays.asList(texte.split(" ")));
 
-        mots.sort((a, b) -> {
-            for (int i = 0; i < a.length(); i++) {
-                for (int j = 0; j < b.length(); j++) {
-                    char charA = a.charAt(i);
-                    char charB = b.charAt(j);
-                    int indexA = ordre.indexOf(charA);
-                    int indexB = ordre.indexOf(charB);
+    public static List<String> solution(String t, List<Character> o) {
+        List<String> m = new ArrayList<>();
+        String[] mt = t.split(" ");
 
-                    if (indexA != indexB) {
-                        return indexA - indexB;
-                    }
+        for (char l : o) {
+            for (String w : mt) {
+                if (w.charAt(0) == l) {
+                    m.add(w);
                 }
             }
+        }
 
-            return a.length() - b.length();
-        });
-
-        return mots;
+        return m;
     }
 }
